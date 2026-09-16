@@ -147,6 +147,16 @@ Search for horizontal nature photos with minimum width 1920px, editors choice on
 Find animation videos about "space exploration"
 ```
 
+## Claude Code Skill: Video Producer
+
+This repo also ships a [Claude Code skill](.claude/skills/pixabay-video-producer/SKILL.md)
+that turns a script or topic into a finished MP4 built from real (non-AI)
+Pixabay footage: it searches Pixabay per scene, filters out AI-generated and
+low-quality clips, downloads them, and assembles the result with `ffmpeg`
+into a vertical/horizontal/square cut with optional crossfades and a
+music/voiceover track. Requires `PIXABAY_API_KEY` plus `ffmpeg`/`ffprobe` on
+PATH; see the skill file for the full workflow.
+
 ## API Rate Limits
 
 - 100 requests per 60 seconds by default
