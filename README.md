@@ -147,6 +147,31 @@ Search for horizontal nature photos with minimum width 1920px, editors choice on
 Find animation videos about "space exploration"
 ```
 
+## Claude Code Skill: Video Producer
+
+This repo also ships a [Claude Code skill](.claude/skills/pixabay-video-producer/SKILL.md)
+that turns a script or topic into a finished MP4 built from real (non-AI)
+Pixabay footage: it searches Pixabay per scene, filters out AI-generated and
+low-quality clips, downloads them, and assembles the result with `ffmpeg`
+into a vertical/horizontal/square cut with optional crossfades and a
+music/voiceover track. Requires `PIXABAY_API_KEY` plus `ffmpeg`/`ffprobe` on
+PATH; see the skill file for the full workflow.
+
+## Claude Code Skill: Documentary Video Producer
+
+A second [Claude Code skill](.claude/skills/documentary-video-producer/SKILL.md)
+builds a long-form narrated documentary from a real voiceover recording and
+its transcript: real stock footage (Pixabay **and** Pexels) alternates with
+branded animated graphic cards (charts, stat reveals, comparisons,
+illustrated characters), all precisely synced to the actual spoken audio via
+Whisper word-level alignment rather than an estimated timing model. Unlike
+the Pixabay-only skill above, it's built for voiceover-driven long-form
+content (tested up to ~19 minutes) where every cut must land on the exact
+word being spoken. Requires `PIXABAY_API_KEY`, `PEXELS_API_KEY`, `ffmpeg`/
+`ffprobe`, and `pip install faster-whisper playwright`; see the skill file
+for the full workflow and the bugs already worked out during its
+development.
+
 ## API Rate Limits
 
 - 100 requests per 60 seconds by default
